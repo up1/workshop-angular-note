@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {Note} from '../note';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
   title = 'Default Note';
   notes = [
     {
@@ -22,9 +23,7 @@ export class BoardComponent implements OnInit {
     }
   ];
 
-  constructor() { }
-
-  ngOnInit() {
+  onSavedNote(savednote: Note) {
+    this.notes = this.notes.map( note => note.id === savednote.id ? savednote : note );
   }
-
 }
