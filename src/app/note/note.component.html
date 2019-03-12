@@ -1,8 +1,15 @@
-<div class="note">
-  <p>Hello Angular</p>
+<div class="note" *ngIf="!isEdit">
+  <p>{{title}}</p>
   <p>{{userEvent}}</p>
   <span>
       <button id="edit" (click)="edit()">Edit</button>
       <button id="remove" (click)="remove()">Remove</button>
+  </span>
+</div>
+
+<div class="note" *ngIf="isEdit">
+  <p><textarea #newTitle></textarea></p>
+  <span>
+      <button id="save" (click)="save(newTitle.value)">Save</button>
   </span>
 </div>
