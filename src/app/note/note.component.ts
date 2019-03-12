@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note.component.css']
 })
 export class NoteComponent implements OnInit {
+  userEvent: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  edit() {
+    this.userEvent = 'Edit';
+  }
+
+  remove() {
+    this.userEvent = 'Remove';
+  }
 }

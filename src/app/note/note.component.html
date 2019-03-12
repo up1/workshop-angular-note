@@ -1,7 +1,8 @@
 <div class="note">
   <p>Hello Angular</p>
+  <p>{{userEvent}}</p>
   <span>
-      <button id="edit">Edit</button>
-      <button id="remove">Remove</button>
+      <button id="edit" (click)="edit()">Edit</button>
+      <button id="remove" (click)="remove()">Remove</button>
   </span>
 </div>
